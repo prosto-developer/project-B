@@ -179,7 +179,7 @@ th {
 	color: white;
 }
 
-/* Стили для таблицы с задачами */
+
 #gridContainer {
 	max-height: 60vh;
 	overflow: auto;
