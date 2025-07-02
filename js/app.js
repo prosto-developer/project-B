@@ -117,21 +117,21 @@ function renderGrid(tasks, dates) {
 	const table = document.createElement('table')
 	table.classList.add('excel-grid')
 
-	// Тело таблицы
+
 	const tbody = table.createTBody()
 
-	// Строки с задачами
+
 	tasks.forEach((t, idx) => {
 		const row = tbody.insertRow()
 
-		// Фиксированная ячейка с названием задачи
+
 		const titleCell = row.insertCell()
 		titleCell.textContent = t.title
 		titleCell.classList.add('fixed-cell')
 		titleCell.style.backgroundColor =
 			APP_CONFIG.userColors[idx % APP_CONFIG.userColors.length]
 
-		// Ячейки с датами
+
 		dates.forEach(d => {
 			const cell = row.insertCell()
 			const dayStart = new Date(d)
@@ -151,10 +151,10 @@ function renderGrid(tasks, dates) {
 		})
 	})
 
-	// Футер с датами
+
 	const tfoot = table.createTFoot()
 	const footRow = tfoot.insertRow()
-	footRow.insertCell() // Пустая ячейка для выравнивания
+	footRow.insertCell() 
 	dates.forEach(d => {
 		const cell = footRow.insertCell()
 		cell.textContent = formatDate(d, 'dd.MM')
@@ -182,7 +182,7 @@ function renderTable(tasks) {
 	})
 }
 
-// Вспомогательные функции
+
 function parseDate(s) {
 	return s ? new Date(s) : new Date()
 }
@@ -273,7 +273,7 @@ function extractUserTasks(filteredData, userEmail, statusFilter) {
 	return Array.from(taskMap.values()).sort((a, b) => a.start - b.start)
 }
 
-// Утилиты
+
 function showLoader(show, text = 'Загрузка...') {
 	const btn = document.getElementById('loadBitrix')
 	btn.disabled = show
